@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>
+            Higgs Corp
+        </title>
+    </head>
+    <body>
+        <header>
+            <p>HiggsTube</p>
+        </header>
+        <section>
+            <input type="text" id="dir" placeholder="Enter the file directory...">
+            <input type="button" id="load" value="Load">
+        </section>
+        <section>
+            <!-- <input type="file" accept="video/*" id="screen"/> -->
+            <video controls id="video">
+              <source id="video_source" src="file:///C:/VSCode/HiggsTube/Icons/video_1.mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p id="actual_dir">Empty</p>
+        </section>
+        <script>
+            const video =  document.getElementById("video");
+            const video_source =  document.getElementById("video_source");
+            const load_video =  document.getElementById("load");
+            const dir =  document.getElementById("dir");
+            const actual_dir =  document.getElementById("actual_dir");
+
+            load_video.addEventListener("click", () => {
+                video_source.src = dir.value;
+                video.load();
+                actual_dir.innerHTML = video_dir.value;
+                console.log(video_dir.value);
+            });
+        </script>
+    </body>
+</html>

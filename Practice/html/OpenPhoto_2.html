@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+            Higgs Corp
+        </title>
+    </head>
+    <body>
+        <header>
+            <p>HiggsTube</p>
+        </header>
+        <section>
+            <input type="text" id="foto_dir" placeholder="Enter the file directory...">
+            <input type="button" id="load_foto" value="Load">
+        </section>
+        <section>
+            <img id="foto" src="file:///C:/VSCode/HiggsTube/Icons/pokemon-1.png" width="600" height="400">
+            <p id="actual_dir">Empty</p>
+        </section>
+        <script>
+            const foto =  document.getElementById("foto");
+            const load_foto =  document.getElementById("load_foto");
+            const foto_dir =  document.getElementById("foto_dir");
+            const actual_dir =  document.getElementById("actual_dir");
+            load_foto.addEventListener("click", () => {
+                foto.src = foto_dir.value;
+                actual_dir.innerHTML = foto_dir.value;
+                console.log(foto_dir.value);
+            });
+        </script>
+    </body>
+</html>
