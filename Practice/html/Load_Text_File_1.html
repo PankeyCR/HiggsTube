@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <h2> Loading text from file using JavaScript. </h2>
+        <br/>
+        <button onclick = "load()"> Load File </button>
+        <p id="label"> Press button to load text</p>
+        <script>
+            const load = async () => {
+                let [fileHandle] = await window.showOpenFilePicker();
+                const file = await fileHandle.getFile();
+                const contents = await file.text();
+                console.log(contents);
+                const label =  document.getElementById("label");
+                label.innerHTML = contents;
+            };
+        </script>
+    </body>
+</html>
